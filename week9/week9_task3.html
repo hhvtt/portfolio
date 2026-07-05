@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<canvas id="sCanvas" width="800" height="800"></canvas>
+<script type="text/javascript">
+    // Variables
+    let randomColour;
+    let xPos;
+    let yPos;
+    let i; // counter
+    let j; // counter
+
+    // Get the Canvas element with ID sCanvas that will be drawn on
+    const c = document.getElementById("sCanvas");
+    const ctx = c.getContext("2d");
+    // draw a circle with a specfied size, position and colour
+    function drawCircle(size, x, y, colour) {
+        ctx.beginPath();
+        ctx.arc(x, y, size, 0, 2*Math.PI*2);
+        ctx.fillStyle = colour;
+        ctx.fill();
+    }
+    // Starting y position
+    yPos = 30;
+
+    // Starting x position
+    xPos = 30;
+
+    // Inner loop for 9 columns
+    for (i=0; i<9; i++) {
+        // Inner loop for 9 rows
+        for (j=0; j<9; j++) {
+            // Generate random colour
+            randomColour = '#' + Math.random().toString(16).substring(2, 8);
+            drawCircle(15, xPos, yPos, randomColour);
+            xPos += 50;
+        }
+        xPos = 30;
+        yPos += 50;
+    }
+</script>
+</body>
+</html>

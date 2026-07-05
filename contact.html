@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+</head>
+<body>
+    <header class="navbar" id="navbar">
+        <div>
+            <a href="index.html" class="logo">
+            <img src="images/logo.svg" alt="Logo">
+            </a>
+            <button id="modeBtn" onclick="toggleMode()">☀️</button>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="coursework.html">Coursework</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </header>
+    <main class="main-content">
+        <div class="contact-left">
+            <div>
+                <h1>Get in Touch</h1>
+                <p>Have a question or want to connect? Send a message using the form, or reach out directly through any of the channels below.</p>
+                <div>
+                    <a href="https://github.com/" target="_blank">
+                        <i class="ti ti-brand-github"></i>github.com/hhvtt2007
+                    </a>
+                    <a href="https://www.facebook.com/ton.huynh.547727" target="_blank">
+                        <i class="ti ti-brand-facebook"></i>facebook.com/ton.huynh
+                    </a>
+                    <a href="mailto:hhvtt2007@gmail.com" target="_blank">
+                        <i class="ti ti-brand-gmail"></i> hhvtt2007@gmail.com   
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="contact-right">
+            <form id="contactForm" novalidate onsubmit="return false">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your Name" required><br>
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="you@example.com" required><br>
+                <label for="message">Message</label>
+                <textarea id="message" placeholder="Write your message ..." required></textarea><br>
+                <p id="formStatus"></p>
+                <button type="submit" onclick="checkformdetails();">Send Message</button>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <div>
+            <a href="https://github.com/" target="_blank">
+                <i class="ti ti-brand-github"></i>
+            </a>
+            <a href="https://www.facebook.com/ton.huynh.547727" target="_blank">
+                <i class="ti ti-brand-facebook"></i>
+            </a>
+            <a href="mailto:hhvtt2007@gmail.com" target="_blank">
+                <i class="ti ti-brand-gmail"></i>
+            </a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

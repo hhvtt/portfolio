@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Area Calculator</title>
+</head>
+
+<body>
+	<p>enter farhenheit</p>
+	<input type="text" id="farhenheit" onclick="this.value=''"><br></br>
+
+	<button onclick="displayResult()">convert</button><br>
+
+	<p id="displayResult"></p>
+	<script>
+		var farhenheit;
+		var celsius;
+		
+		function convert(farhenheit) {
+			celsius = (farhenheit - 32) * 5/9;
+			return celsius;
+		}
+		function displayResult(){
+			farhenheit = document.getElementById("farhenheit").value; 
+			celsius = convert(farhenheit); 
+			document.getElementById("displayResult").innerHTML+="The temperature in Celsius is " + celsius.toFixed(2) + "<br />"; 
+		}
+
+	</script>
+</body>
+</html>

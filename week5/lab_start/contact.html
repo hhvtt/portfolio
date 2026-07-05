@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="grid.css">
+</head>
+<body>
+	<div class="content">
+	<div class="grid-container">
+  <div class="grid-item1"><h1>Contact</h1></div>
+  <div class="grid-item2">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a class="active" href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>      
+    </ul>
+  </div>
+  <div class="grid-item3">
+    <fieldset>
+      <legend>Your Details:</legend>
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name"><br>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email"><br>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password"><br>
+          <label for="comments">Comments:</label><br>
+          <textarea id="comments" name="comments" rows="3" cols="40"></textarea><br>
+          <label for="way">How did you hear about us?:</label><br>
+          <select id="way" name="way">
+            <option value="google">Google</option>
+            <option value="facebook">Facebook</option>
+            <option value="twitter">Twitter</option>
+            <option value="other">Other</option>
+          </select><br>
+          <label for="visit">Would you visit again?:</label><br>
+          <input type="radio" id="yes" name="visit" value="yes">Yes
+          <input type="radio" id="no" name="visit" value="no">No
+          <input type="radio" id="maybe" name="visit" value="maybe">Maybe<br>
+          <input type="checkbox" id="update" name="update"> Sign me up for email updates<br>
+          <button type="reset">Reset</button>
+          <button type="submit">Submit</button>
+        </form>
+  </div>
+  <div class="grid-item4">Aside</div>
+  <div class="grid-item5">Footer</div>
+</div>
+</div>
+</body>
+</html>
