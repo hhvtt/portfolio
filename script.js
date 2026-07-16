@@ -10,8 +10,8 @@ function checkformdetails() {
     var email = document.getElementById('email').value.trim();
     var message = document.getElementById('message').value.trim();
     var status = document.getElementById('formStatus');
-    if (name === '' || email === '' || message === '') {
-        status.textContent = 'Please fill in all fields.';
+    if (name === '' || email === '' || message === '' || !email.includes('@')) {
+        status.textContent = 'Please fill in all fields correctly.';
         status.className = 'error';
         return ;
     }
@@ -24,7 +24,7 @@ function loadMode() {
         document.getElementById('modeBtn').textContent = '🌙';
     }
 }
-function toggleMode() {
+function darkMode() {
     document.body.classList.toggle('light');
     var btn = document.getElementById('modeBtn');
     if (document.body.classList.contains('light')) {
@@ -39,19 +39,19 @@ function toggleCard(card) {
     var body = card.querySelector('.box-details');
     var icon = card.querySelector('.box-expand');
     var isOpen = card.classList.contains('open');
+    document.querySelectorAll('.box.open').forEach(closeCard);
 
-    if (isOpen) {
-        /* đang mở → đóng lại */
-        body.style.display = 'none';
-        icon.textContent = '+';
-        card.classList.remove('open');
-    } else {
-        /* đang đóng → mở ra */
+    if (!isOpen) {
         body.style.display = 'flex';
         icon.textContent = '−';
         card.classList.add('open');
     }
 }
+function closeCard(card) {
+    card.querySelector('.box-details').style.display = 'none';
+    card.querySelector('.box-expand').textContent = '+';
+    card.classList.remove('open');
+}   
 var navbar = document.getElementById('navbar');
 window.addEventListener('scroll', updateNavbarBorder);
 loadMode();
